@@ -15,7 +15,7 @@ def callback(ch, method, properties, body):
     ch.basic_ack(delivery_tag = method.delivery_tag)
 
 channel.basic_consume(callback,
-                      queue='hello',
+                      queue='task_queue',
                       no_ack=False)
 
 print(' [*] Waiting for messages. To exit press CTRL+C')
